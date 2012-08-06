@@ -79,7 +79,7 @@ if [ ! -f $SITE_DIR/Gemfile ]; then
     exit 1
 fi
 
-$GEM_DIR/bin/bundle install --deployment --path $GEM_DIR | grep 'Installing' | indent
+$GEM_DIR/bin/bundle install --gemfile $SITE_DIR/Gemfile --deployment --path $GEM_DIR | grep 'Installing' | indent
 
 echo "-----> Compiling Nanoc site"
 
